@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Expense Calculator</title>
+    <link rel="stylesheet" type="text/css" href="style.css" />
+</head>
+
+<body>
+    <div class="container">
+        <h1>Expense Calculator</h1>
+        <form id="budget-form">
+            <input type="number" id="budget-amount" placeholder="Set Budget" required />
+            <button type="submit">Set Budget</button>
+        </form>
+        <form id="expense-form">
+            <input type="text" id="expense-name" placeholder="Item Description" required />
+            <input type="number" id="expense-amount" placeholder="Cost" required />
+            <select id="expense-category" required>
+                <option value="" disabled selected>Choose Category</option>
+                <option value="Groceries">Groceries</option>
+                <option value="Travel">Travel</option>
+                <option value="Leisure">Leisure</option>
+                <option value="Miscellaneous">Miscellaneous</option>
+            </select>
+            <input type="date" id="expense-date" required />
+            <button type="submit">Add Item</button>
+        </form>
+        <div class="expense-table">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Item Description</th>
+                        <th>Cost</th>
+                        <th>Category</th>
+                        <th>Date</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody id="expense-list"></tbody>
+            </table>
+            <div class="total-amount">
+                <strong>Total:</strong> $<span id="total-amount">0</span>
+            </div>
+            <div class="budget-status" id="budget-status"></div>
+        </div>
+        <div class="filter">
+            <label for="filter-category">Filter by Category:</label>
+            <select id="filter-category">
+                <option value="All">All</option>
+                <option value="Groceries">Groceries</option>
+                <option value="Travel">Travel</option>
+                <option value="Leisure">Leisure</option>
+                <option value="Miscellaneous">Miscellaneous</option>
+            </select>
+            <label for="search-expense">Search:</label>
+            <input type="text" id="search-expense" placeholder="Search by item" />
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+
+</html>
